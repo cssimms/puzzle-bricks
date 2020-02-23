@@ -16,4 +16,12 @@ const MoveBox = (entities, { input }) => {
   return entities;
 };
 
-export { MoveBox };
+const Gravity = (entities) => {
+
+  const box1 = entities['box1']
+  box1.y = box1.y + 1
+
+  return entities
+}
+
+export { MoveBox, Gravity };
