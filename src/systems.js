@@ -4,23 +4,28 @@ const MoveBox = (entities, { input }) => {
   // -- Example: return { ...entities, t.id: { UPDATED COMPONENTS }};
   // -- That said, it's probably worth considering performance implications in either case.
 
-  const { payload } = input.find((x) => x.name === 'onMouseDown') || {};
+  // cs - leaving this here for easy reference to when we
+  // put in a cursor / user input
+  // const { payload } = input.find((x) => x.name === 'onMouseDown') || {};
 
-  if (payload) {
-    const { box1 } = entities;
+  // if (payload) {
+  //   const { block1 } = entities;
 
-    box1.x = payload.pageX;
-    box1.y = payload.pageY;
-  }
+  //   block1.x = payload.pageX;
+  //   block1.y = payload.pageY;
+  // }
 
+  console.log('MoveBox');
   return entities;
 };
 
 const Gravity = (entities) => {
-  const { box1 } = entities;
-  box1.y += 1;
-
-  return entities;
+  const newEntities = Object.keys(entities).map((entityKey) => {
+    const newEntity = { ...entities[entityKey] };
+    newEntity.y -= 0.25;
+    return newEntity;
+  });
+  return newEntities;
 };
 
 export { MoveBox, Gravity };
