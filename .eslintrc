@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    // Override the airbnb defaults here
+    "max-len": ["error", {"ignoreComments": true, "code":110}]
+  }
+}

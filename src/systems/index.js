@@ -20,6 +20,7 @@ const Gravity = (entities) => {
   const { box1 } = entities;
   box1.y += 1;
 
+
   return entities;
 };
 
