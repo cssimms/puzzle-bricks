@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function Splash() {
+function Splash({ setGameRunning }) {
   return (
     <div>
       Splasshh
+      <button type="button" onClick={setGameRunning} />
     </div>
-  )
+  );
 }
 
-export default Splash
+export default Splash;
